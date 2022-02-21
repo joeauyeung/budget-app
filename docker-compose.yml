@@ -1,0 +1,10 @@
+version: "1"
+
+services:
+  postgres:
+    image: postgres
+    volumes:
+      - budget-postgress-data:/var/lib/postgres
+
+volumes: 
+  budget-postgress-data

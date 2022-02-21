@@ -1,25 +1,18 @@
-version: "1"
+version: "3.8"
 
 services:
   client:
-    build: .
-    command: sh -c "npm install && npm start"
-    working_dir: /root/client
+    build: ./client
     ports:
-      - 8080:8080
-    volumes:
-      - ./client:/root/client:cached
+      - "3000:3000"
+    
     depends_on:
-      - api
+      - server
 
   server:
-    build: .
-    command: sh -c "npm install && npm start"
-    working_dir: /root/server
+    build: ./server
     ports:
-      - 3000:3000
-    volumes:
-      - ./server:/root/server:cached
+      - "8080:8080"
     depends_on:
       - postgres
 

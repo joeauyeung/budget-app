@@ -3,7 +3,7 @@ CREATE TABLE categories (
     cat_name VARCHAR
 );
 
-CREATE TABLE transactions (
+CREATE TABLE expenses (
     id VARCHAR PRIMARY KEY,
     date TIMESTAMP,
     amount INT NOT NULL,

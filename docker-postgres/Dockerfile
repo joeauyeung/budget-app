@@ -1,5 +1,8 @@
 FROM postgres:latest
 
+ENV POSTGRES_USER docker
+ENV POSTGRES_PASSWORD password
+
 ADD ./scripts/create-tables.sql /docker-entrypoint-initdb.d/
 ENTRYPOINT ["docker-entrypoint.sh"]
 
